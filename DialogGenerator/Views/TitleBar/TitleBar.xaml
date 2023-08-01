@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="DialogGenerator.Views.TitleBarHolder.TitleBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Name="Root"
+             MouseLeftButtonDown="TitleBar_MouseLeftButtonDown"
+             MouseDoubleClick="TitleBar_MouseDoubleClick"
+             Background="Transparent"
+             UseLayoutRounding="True"
+             mc:Ignorable="d">
+    <UserControl.Resources>
+        <!--While setting value for resource dictionary all the values should be inside
+        the resoure dictionary or element will throw error saying it is set more than once.-->
+        <ResourceDictionary>
+            <BooleanToVisibilityConverter  x:Key="BoolToVisConv" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/DialogGenerator;component/Resources/ResourceDictionary/CommonAppDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border CornerRadius="2" BorderThickness="1" Background="{Binding ElementName=Root, Path=TitleBarBackground}">
+        <DockPanel LastChildFill="False"  Background="Transparent" Margin="0,10,10,0">
+
+            <TextBlock x:Name="CaptionTextBlock"
+                       FontWeight="ExtraBold"
+                       DockPanel.Dock="Left"
+                       TextWrapping="Wrap"
+                       FontSize="14"
+                       VerticalAlignment="Center"
+                       Margin="10,0,0,0"
+                       Text="{Binding ElementName=Root, Path=Caption}" />
+
+            <Button x:Name="CloseButton"  DockPanel.Dock="Right"   ClickMode="Release"  Click="CloseButton_Click" Width="30" Height="30">
+                <Button.Content>
+                    <Image x:Name="CloseIcon" Source="{StaticResource CloseButtonIcon }" />
+                </Button.Content>
+                <Button.Style>
+                    <Style TargetType="Button" BasedOn="{StaticResource WindowButtonStyle}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Red" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="Green" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="ResizeButton" DockPanel.Dock="Right"   Style="{StaticResource WindowButtonStyle}"   Click="ResizeButton_Click" Width="30" Height="30">
+                <Button.Content>
+                    <Grid>
+                        <Image x:Name="NormalState" Source="{StaticResource RestoreButtonIcon}" Visibility="Hidden" />
+                        <Image x:Name="MaximizedState" Source="{StaticResource MaximizeButtonIcon }" />
+                    </Grid>
+                </Button.Content>
+            </Button>
+            <Button x:Name="MinimizeButton"  DockPanel.Dock="Right" Style="{StaticResource WindowButtonStyle}"  Click="MinimizeButton_Click" Width="30" Height="30">
+                <Button.Content>
+                    <Image Source="{StaticResource MinimizeButtonIcon}" />
+                </Button.Content>
+            </Button>
+        </DockPanel>
+    </Border>
+</UserControl>

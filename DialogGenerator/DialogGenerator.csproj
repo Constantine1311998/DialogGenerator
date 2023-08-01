@@ -1,0 +1,76 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <Title>DialogGenerator</Title>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Konstantine</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Icons\Asterik.png" />
+    <None Remove="Resources\Icons\CloseWindowIcon.png" />
+    <None Remove="Resources\Icons\Error.png" />
+    <None Remove="Resources\Icons\ExclamationMark.png" />
+    <None Remove="Resources\Icons\Hand.png" />
+    <None Remove="Resources\Icons\Information.png" />
+    <None Remove="Resources\Icons\MaximizeWindowIcon.png" />
+    <None Remove="Resources\Icons\MinimizeWindowIcon.png" />
+    <None Remove="Resources\Icons\Question.png" />
+    <None Remove="Resources\Icons\RestoreWindowIcon.png" />
+    <None Remove="Resources\Icons\Stop.png" />
+    <None Remove="Resources\Icons\Warning.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Resources\ResourceDictionary\CommonAppDictionary.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Asterik.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\CloseWindowIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\Error.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\ExclamationMark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\Hand.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\Information.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\MaximizeWindowIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\MinimizeWindowIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\Question.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\RestoreWindowIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\Stop.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\Warning.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\ResourceDictionary\CommonAppDictionary.xaml" />
+  </ItemGroup>
+
+</Project>
